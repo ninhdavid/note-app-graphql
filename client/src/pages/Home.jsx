@@ -2,8 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Grid, Typography } from '@mui/material';
 import UserMenu from '../components/UserMenu';
+import FolderList from '../components/FolderList';
+import { Outlet, useLoaderData } from 'react-router-dom';
 
 function Home(props) {
+	const { folders } = useLoaderData();
+
 	return (
 		<div>
 			<Typography variant="h4" sx={{ mg: '20px' }}>
@@ -21,10 +25,10 @@ function Home(props) {
 				}}
 			>
 				<Grid item xs={3} sx={{ height: '100%' }}>
-					<p>Folder List</p>
+					<FolderList folders={folders} />
 				</Grid>
 				<Grid item xs={9} sx={{ height: '100%' }}>
-					<p>Note List</p>
+					<Outlet />
 				</Grid>
 			</Grid>
 		</div>

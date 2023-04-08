@@ -21,7 +21,10 @@ function UserMenu(props) {
 	};
 	return (
 		<div>
-			<Box sx={{ display: 'flex' }} onClick={handleClick}>
+			<Box
+				sx={{ display: 'flex', cursor: 'pointer' }}
+				onClick={handleClick}
+			>
 				<Typography>{displayName}</Typography>
 				<Avatar
 					alt="avatar"
