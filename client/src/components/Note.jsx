@@ -29,7 +29,6 @@ function Note(props) {
 		setEditorState(EditorState.createWithContent(state));
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [note.id]);
-	console.log(rawHtml);
 
 	useEffect(() => {
 		debounceMemorized(rawHtml, note, location.pathname);

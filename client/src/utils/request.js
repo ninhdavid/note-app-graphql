@@ -13,13 +13,14 @@ export const graphQlRequest = async (payload, options = {}) => {
 			body: JSON.stringify(payload),
 		});
 
-		// if (!res.ok) {
-		// 	if (res.status === 403) {
-		// 		return null;
-		// 	}
-		// }
+		if (!res.ok) {
+			if (res.status === 403) {
+				return null;
+			}
+		}
 
 		const { data } = await res.json();
 		return data;
 	}
+	return null;
 };
