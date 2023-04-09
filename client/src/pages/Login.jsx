@@ -19,12 +19,12 @@ function Login(props) {
 		} = await signInWithPopup(auth, provider);
 
 		const { data } = await graphQlRequest({
-			query: `mutation register($uid: String!, $name: String!){
-			register(uid:$uid, name: $name){
-				uid
-				name
-			}
-		}`,
+			query: `mutation Mutation($uid: String!, $name: String!) {
+				register(uid: $uid, name: $name) {
+				  uid
+				  name
+				}
+			  }`,
 			variables: {
 				uid,
 				name: displayName,

@@ -30,7 +30,6 @@ await server.start();
 
 const authorizationJWT = async (req, res, next) => {
 	const authorizationHeader = req.headers.authorization;
-
 	if (authorizationHeader) {
 		const accessToken = authorizationHeader.split(' ')[1];
 
@@ -48,7 +47,7 @@ const authorizationJWT = async (req, res, next) => {
 			});
 	} else {
 		next();
-		return res.status(401).json({ message: 'Unauthorized' });
+		// return res.status(401).json({ message: 'Unauthorized' });
 	}
 };
 

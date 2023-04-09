@@ -4,10 +4,15 @@ import Home from '../pages/Home';
 import AuthProvider from '../context/AuthProvider';
 import ProtectedRoute from './ProtectedRoute';
 import ErrorPage from '../pages/ErrorPage';
-import NoteList from '../components/NoteList,';
 import Note from '../components/Note';
-import { noteLoader, notesLoader } from '../utils/noteUtils';
+import {
+	addNewNote,
+	noteLoader,
+	notesLoader,
+	updateNote,
+} from '../utils/noteUtils';
 import { foldersLoader } from '../utils/folderUtils';
+import NoteList from '../components/NoteList';
 
 const AuthLayout = () => {
 	return (
@@ -34,11 +39,13 @@ export default createBrowserRouter([
 							{
 								element: <NoteList />,
 								path: `folders/:folderId`,
+								action: addNewNote,
 								loader: notesLoader,
 								children: [
 									{
 										element: <Note />,
 										path: `note/:noteId`,
+										action: updateNote,
 										loader: noteLoader,
 									},
 								],

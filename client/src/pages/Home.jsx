@@ -9,8 +9,8 @@ function Home(props) {
 	const { folders } = useLoaderData();
 
 	return (
-		<div>
-			<Typography variant="h4" sx={{ mg: '20px' }}>
+		<>
+			<Typography variant="h4" sx={{ mb: '20px' }}>
 				Note App
 			</Typography>
 			<Box sx={{ display: 'flex', justifyContent: 'right', mb: '10px' }}>
@@ -21,7 +21,7 @@ function Home(props) {
 				container
 				sx={{
 					height: '50vh',
-					boxShadow: '0 0 15px 0 rgb(193 913 193 / 60%',
+					boxShadow: '0 0 15px 0 rgb(193 193 193 / 60%)',
 				}}
 			>
 				<Grid item xs={3} sx={{ height: '100%' }}>
@@ -31,7 +31,7 @@ function Home(props) {
 					<Outlet />
 				</Grid>
 			</Grid>
-		</div>
+		</>
 	);
 }
 

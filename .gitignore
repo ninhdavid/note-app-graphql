@@ -23,4 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 
-fakeData
+.history
+.history/
+.history/*
+/.history
+/.history/
+/.history/*
+./.history
